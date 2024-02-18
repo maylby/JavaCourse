@@ -21,7 +21,9 @@ https://gb.ru/lessons/404313
 
 package JavaCourse.Lesson02;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 
 public class L03TryDemo {
     
@@ -53,7 +55,7 @@ public class L03TryDemo {
             /*
              * следующая строка взята из кода файловой системы
              * (см. файл L02Files.java)
-             * внесена мной для активации переменной "f3", иначе
+             * строка внесена мной для активации переменной "f3", иначе
              * система выдёт следующее сообщение:
              * "Значение локальной переменной f3 не используется".
              */ 
@@ -63,7 +65,8 @@ public class L03TryDemo {
             System.out.println("catch");
         }
         finally
-        { System.out.println("finally"); }
+        { System.out.println("finally"); } // форма записи кода из лекции
+                                             // стандартная форма записи - строка "catch"
     }
     /*
      * P.S. 
@@ -94,6 +97,33 @@ public class L03TryDemo {
         } finally {
             System.out.println("finally");
         } 
+    }
+
+    {
+        String line = "empty";
+        try {
+            /*
+             * Две следующие строки кода 
+             * ("String pathProject ..." и "String pathFile1 ...")
+             * внесены мной для активации переменной "pathFile1",
+             * без них система не распознаёт "pathFile1" и выдаёт ошибку
+             */ 
+            String pathProject = System.getProperty("user.dir");
+            String pathFile1 = pathProject.concat("/file.txt");
+            File file = new File(pathFile1);
+            if (file.createNewFile()) {
+                System.out.println("file.created"); }
+            else {
+                BufferedReader bufReader =
+                new BufferedReader(new FileReader(file));
+                System.out.println("file.existed");
+                line = bufReader.readLine();
+                bufReader.close(); }
+        } catch (Exception e) {
+            //e.printStackTrace();
+        } finally {
+            System.out.println(line);
+        }
     }
 }
 
