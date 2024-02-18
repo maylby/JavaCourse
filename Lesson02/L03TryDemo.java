@@ -93,9 +93,7 @@ public class L03TryDemo {
             System.out.println("catch");
         } finally {
             System.out.println("finally");
-
-        } // нехватает скобок
-
+        } 
     }
 }
 
