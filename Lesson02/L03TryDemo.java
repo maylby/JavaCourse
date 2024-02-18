@@ -49,11 +49,15 @@ public class L03TryDemo {
         try {
             String pathProject = System.getProperty("user.dir");
             String pathFile = pathProject.concat("/file.txt");
-            File f3 = new File(pathFile); 
-            System.out.println(f3.getAbsolutePath ());  // строка внесена мной
-                                                        // из кода файловой системы
-                                                        // для активации "f3"
-                                                        // (см. файл L02Files.java)
+            File f3 = new File(pathFile);
+            /*
+             * следующая строка взята из кода файловой системы
+             * (см. файл L02Files.java)
+             * внесена мной для активации переменной "f3", иначе
+             * система выдёт следующее сообщение:
+             * "Значение локальной переменной f3 не используется".
+             */ 
+            System.out.println(f3.getAbsolutePath ()); 
             System.out.println("try");
         } catch (Exception e) {
             System.out.println("catch");
