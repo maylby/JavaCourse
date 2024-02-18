@@ -28,6 +28,10 @@ package JavaCourse.Lesson02;
 import java.io.File;
 
 public class L02Files {
+	/*
+	 * Код из дополнительных материалов к лекции 02
+	 * см. ПК: 02_(Л-02)_доп, папка "Lesson_02", файл "Ex002_fileSystemDemo"
+	 */
     public static void main(String[] args) {
  		String pathProject = System.getProperty("user.dir");
  		String pathFile = pathProject.concat("/file.txt");
@@ -38,9 +42,17 @@ public class L02Files {
         /*
          * Запустил код
          * Терминал выдал адресную строку с записью "file.txt"
-         * Но сам файл по указанному адресу в папке "Lesson02" не появился
-         */
         // C:\Users\Vitaliy\GeekBrains\JavaCourse\Lesson02\file.txt (VSCode)
+         * 
+         * Но сам файл "file.txt" по указанному адресу в папке "Lesson02" не появился,
+         * вместо файла, система создала пустую папку "file" внутри папки "Lesson02" (VSCode)
+         */
+
+        System.out.println(pathFile);
+        File f1 = new File("file.txt");
+        File f2 = new File("/Users/sk/vscode/java_projects/file.txt");
+        System.out.println(f1.getAbsolutePath());
+        System.out.println(f2.getAbsolutePath());
     }
 }    
 
