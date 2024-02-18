@@ -45,10 +45,7 @@ public class L03ExTryDemo {
         } catch (Exception e) {
             //e.printStackTrace();
         } finally {
-            System.out.println(line);   // Вывод:
-                                        // file.existed
-                                        // empty (если "BufferedReader" закомичен)
-                                        // new line (если "BufferedReader" открыт)
+            System.out.println(line); 
         }
     }
 }

@@ -17,8 +17,14 @@ https://gb.ru/lessons/404313
 
 00:14:00
 Блоки обработки ошибок
- */
 
+Коды "Блока обработки ошибок" 
+записаны с экрана единым массивом в процессе лекции, 
+в хронологической последовательности изложения материала,
+работе друг друга помех не создают,
+каждый выдаёт заданый результат независимо.
+
+ */
 package JavaCourse.Lesson02;
 
 import java.io.BufferedReader;
@@ -66,9 +72,10 @@ public class L03TryDemo {
             System.out.println("catch");
         }
         finally
-        { System.out.println("finally"); } // форма записи кода из лекции
-                                            // стандартная форма записи - строка "catch"
-    }
+        { System.out.println("finally"); } // форма записи кода 
+                                            // строки "finally" нестандартна, 
+                                            // в таком виде применена в лекции,
+                                            // строка "catch" записана стандартно
     /*
      * P.S. 
      * Если можно не писать данный код, то лучше его не писать
@@ -77,31 +84,34 @@ public class L03TryDemo {
     00:15:00
     Что можно изменить?
     */
-    {
-        try {
-            String pathProject = System.getProperty("user.dir");
-            String pathFile = pathProject.concat("/file.txt");
-            File file = new File(pathFile);
 
-            if (file.createNewFile()) { // можно сделать проверку:
-                                        // Если возвращается True (истина),
-                                        // значит файл был создан
-                                        // Если False (ложь), значит  
-                                        // такой файл уже был найден, 
-                                        // и работать с ним нужно по-другому          
-                System.out.println("file.created");
-            }
-            else {
-                System.out.println("file.existed");
-            }
-        } catch (Exception e) {
-            System.out.println("catch");
-        } finally {
-            System.out.println("finally");
-        } 
-    }
+            try {
+                String pathProject = System.getProperty("user.dir");
+                String pathFile = pathProject.concat("/file.txt");
+                File file = new File(pathFile);
 
-    {
+                if (file.createNewFile()) { // можно сделать проверку:
+                                            // Если возвращается True (истина),
+                                            // значит файл был создан
+                                            // Если False (ложь), значит  
+                                            // такой файл уже был найден, 
+                                            // и работать с ним нужно по-другому          
+                    System.out.println("file.created");
+                }
+                else {
+                    System.out.println("file.existed");
+                }
+            } catch (Exception e) {
+                System.out.println("catch");
+            } finally {
+                System.out.println("finally");
+            } 
+
+/*
+ * Далее, финальный блок из дополнительных материалов к лекции
+ * Папка ПК: 02_(Л-02)_доп (папка: "Lesson_02", файл "Ex003_tryDemo")
+ */
+
         String line = "empty";
         try {
             /*
@@ -116,10 +126,10 @@ public class L03TryDemo {
             File file = new File(pathFile1);
 
             if (file.createNewFile()) {
-                System.out.println("file.created"); }
+                System.out.println("file.created"); 
+            }
             else {
                 System.out.println("file.existed");
-
                 /*
                  * "FileWriter" записывает текст в символьные файлы
                  * Часть кода, относящаяся к "FileWriter",
