@@ -32,11 +32,6 @@ log.addHandler(info);
 Формат вывода: структурированный, абы как*
 XMLFormatter, SimpleFormatte // указать формат вывода
 
-
-
-Код из презентации (стр. 38)
-
-
  */
 package JavaCourse.Lesson02;
 
@@ -46,6 +41,7 @@ import java.util.logging.*;
 public class L06Logger {
     public static void main(String[] args) throws IOException {
         /*
+         * Код из презентации (стр. 38)
          * Стандартный формат (? пользовательский)
          * записан с экрана во время лекции
          */
@@ -75,7 +71,7 @@ public class L06Logger {
 
         /*
          * Код из дополнительных материалов к лекции 2
-         * ПК: 02_(Л-02)_доп (папка "Lesson_02", файл "Ex005_Logger")
+         * 02_(Л-02)_доп (папка "Lesson_02", файл "Ex005_Logger")
          */
         Logger logger2 = Logger.getLogger(L06Logger.class.getName());
         //ConsoleHandler ch = new ConsoleHandler();
@@ -96,14 +92,12 @@ public class L06Logger {
 
 /*
 00:26:20
-
 Демонстрация работы кода на экране 
 (вывод сообщений в консоль в текстовом и xml формате)
 (см. папки с доп. мат.(?) и/или презентацию (?))
 
 
 00:29:00
-
 Демонстрация записи кода в текстовый фаил и xml-файл
 
 
