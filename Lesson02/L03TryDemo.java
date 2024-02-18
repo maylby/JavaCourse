@@ -25,6 +25,12 @@ import java.io.File;
 
 public class L03TryDemo {
     
+    /*
+     * Общая структура блока обработки ошибок:
+     *  - try (код, в котором может появиться ошибка)
+     *  - catch (обработка, если ошибка случилась)
+     *  - finally (код, который выполнится в любом случае)
+     */
     {
         try {
             // Код, в котором может появиться ошибка
@@ -36,12 +42,18 @@ public class L03TryDemo {
         }
     }
 
-    public static void main(String[] args) { // повтор строки (см. выше)
-    
+    public static void main(String[] args) { 
+        /*
+         * Код блока обработки ошибок
+         */
         try {
             String pathProject = System.getProperty("user.dir");
             String pathFile = pathProject.concat("/file.txt");
             File f3 = new File(pathFile); 
+            System.out.println(f3.getAbsolutePath ());  // строка внесена мной
+                                                        // из кода файловой системы
+                                                        // для активации "f3"
+                                                        // (см. файл L02Files.java)
             System.out.println("try");
         } catch (Exception e) {
             System.out.println("catch");
@@ -54,3 +66,4 @@ public class L03TryDemo {
 * P.S. 
 * Если можно не писать данный код, то лучше его не писать
 */
+
