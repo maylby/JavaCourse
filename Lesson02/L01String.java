@@ -78,7 +78,7 @@ public class L01String {
         //System.out.println(str); 
         //System.out.println(sb);
     }
-}
+
 
 
 /*
@@ -102,4 +102,20 @@ equalsIgnoreCase(): сравнивает строки без учета реги
 regionMatches(): сравнивает подстроки в строках
 
 
+
+00:06:00
  */
+    /*
+     * Включил запись в предыдущий код
+     */
+    // public static void main(String[] args) // убрал строку за ненадобностью
+    {
+        String[] name = { "C", "е", "р", "г", "е", "й" };
+        String sk = "СЕРГЕЙ КА.";
+        System.out.println(sk.toLowerCase()); // сергей ка.
+        System.out.println(String.join("", name)); // Cергей
+        System.out.println(String.join("", "C", "е", "р", "г", "е", "й"));
+        // C,е,р,г,е,й
+        System.out.println(String.join(",", "C", "е", "р", "г", "е", "й"));
+    }
+}
