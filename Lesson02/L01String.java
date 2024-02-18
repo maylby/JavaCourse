@@ -29,9 +29,53 @@ habr (ссылка)
 4. Импорт
 5. Xml
 
+
+
+00:03:50
+1. Строки
+
+Простой пример
+Создать строку из 1 млн плюсиков. Как?
+
+
  */
 package JavaCourse.Lesson02;
 
 public class L01String {
-    
+
+    public static void main(String[] args) {
+        /*
+         * Вариант 1 
+         * (стандартный функционал)
+         */
+        String str = " "; // (?) "str" не подсвечен
+        for (int i = 0; i < 1_000_000; i++) {
+            str += "+";  // время выполнения - 41000 ms (41 секунда)
+        } 
+
+        /*
+         * Вариант 2 
+         * (функционал "StringBuilder")
+         */
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 1_000_000; i++) {
+            sb.append("+"); // время выполнения - 9 ms
+        }
+
+        /*
+         * 00:05:00
+         * Весь код
+         * (функционал "StringBuilder")
+         */
+        var s = System.currentTimeMillis();
+        //String str = "";
+        StringBuilder sb1 = new StringBuilder();
+        for (int i = 0; i < 1_000_000; i++) {
+            //str += "+";
+            sb1.append("+");
+        }
+        System.out.println(System.currentTimeMillis() - s);
+        //System.out.println(str); 
+        //System.out.println(sb);
+    }
 }
