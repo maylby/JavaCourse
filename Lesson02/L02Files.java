@@ -28,7 +28,7 @@ package JavaCourse.Lesson02;
 import java.io.File;
 
 public class L02Files {
-     	public static void main(String[] args) {
+    public static void main(String[] args) {
  		String pathProject = System.getProperty("user.dir");
  		String pathFile = pathProject.concat("/file.txt");
  		File f3 = new File(pathFile);
@@ -41,8 +41,8 @@ public class L02Files {
          * Но сам файл по указанному адресу в папке "Lesson02" не появился
          */
         // C:\Users\Vitaliy\GeekBrains\JavaCourse\Lesson02\file.txt (VSCode)
- 	}
-}
+    }
+    
 
 
 /*
@@ -58,4 +58,19 @@ public class L02Files {
 6. Файл пустой
 7. Файл частично битый
 
+
+00:14:00
+
+Блоки обработки ошибок
  */
+    {
+        try {
+            // Код, в котором может появиться ошибка
+        } catch (Exception e) {
+            // Обработка, если ошибка случилась
+        }
+        finally {
+            // Код, который выполнится в любом случае
+        }
+    }
+}
