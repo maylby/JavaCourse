@@ -107,6 +107,7 @@ public class L03TryDemo {
              * ("String pathProject ..." и "String pathFile1 ...")
              * внесены мной для активации переменной "pathFile1",
              * без них система не распознаёт "pathFile1" и выдаёт ошибку
+             * В лекции данные строки кода отсутствовали
              */ 
             String pathProject = System.getProperty("user.dir");
             String pathFile1 = pathProject.concat("/file.txt");
