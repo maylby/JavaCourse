@@ -65,9 +65,37 @@ public class L03TryDemo {
         finally
         { System.out.println("finally"); }
     }
+    /*
+     * P.S. 
+     * Если можно не писать данный код, то лучше его не писать
+    
+
+    00:15:00
+    Что можно изменить?
+    */
+    {
+        try {
+            String pathProject = System.getProperty("user.dir");
+            String pathFile = pathProject.concat("/file.txt");
+            File file = new File(pathFile);
+            if (file.createNewFile()) { // можно сделать проверку:
+                                        // Если возвращается True (истина),
+                                        // значит файл был создан
+                                        // Если False (ложь), значит  
+                                        // такой файл уже был найден, 
+                                        // и работать с ним нужно по-другому          
+                System.out.println("file.created");
+            }
+            else {
+                System.out.println("file.existed");
+            }
+        } catch (Exception e) {
+            System.out.println("catch");
+        } finally {
+            System.out.println("finally");
+
+        } // нехватает скобок
+
+    }
 }
-/*
-* P.S. 
-* Если можно не писать данный код, то лучше его не писать
-*/
 
