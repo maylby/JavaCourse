@@ -24,6 +24,7 @@ package JavaCourse.Lesson02;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 
 public class L03TryDemo {
     
@@ -66,7 +67,7 @@ public class L03TryDemo {
         }
         finally
         { System.out.println("finally"); } // форма записи кода из лекции
-                                             // стандартная форма записи - строка "catch"
+                                            // стандартная форма записи - строка "catch"
     }
     /*
      * P.S. 
@@ -81,6 +82,7 @@ public class L03TryDemo {
             String pathProject = System.getProperty("user.dir");
             String pathFile = pathProject.concat("/file.txt");
             File file = new File(pathFile);
+
             if (file.createNewFile()) { // можно сделать проверку:
                                         // Если возвращается True (истина),
                                         // значит файл был создан
@@ -112,14 +114,32 @@ public class L03TryDemo {
             String pathProject = System.getProperty("user.dir");
             String pathFile1 = pathProject.concat("/file.txt");
             File file = new File(pathFile1);
+
             if (file.createNewFile()) {
                 System.out.println("file.created"); }
             else {
-                BufferedReader bufReader =
-                new BufferedReader(new FileReader(file));
                 System.out.println("file.existed");
+
+                /*
+                 * "FileWriter" записывает текст в символьные файлы
+                 * Часть кода, относящаяся к "FileWriter",
+                 * взята из дополнительных материалов к лекции 2,
+                 * в видео ролике данного кода не было
+                 */
+                FileWriter fileWriter = new FileWriter(file, true);
+                fileWriter.write("new line");
+
+                fileWriter.append(System.lineSeparator());
+
+                fileWriter.write("new line");
+                fileWriter.append("new line");
+                fileWriter.flush();
+                fileWriter.close();
+                
+                BufferedReader bufReader = new BufferedReader(new FileReader(file));
                 line = bufReader.readLine();
-                bufReader.close(); }
+                bufReader.close(); 
+            }
         } catch (Exception e) {
             //e.printStackTrace();
         } finally {
