@@ -32,4 +32,29 @@ log.addHandler(info);
 Формат вывода: структурированный, абы как*
 XMLFormatter, SimpleFormatte // указать формат вывода
 
+
+
+Код из презентации (стр. 38)
+
+Стандартный формат (? пользовательский)
  */
+package JavaCourse.Lesson02;
+
+import java.util.logging.*;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.SimpleFormatter;
+
+public class L06Logger {
+    public static void main(String[] args) {
+
+ 		Logger logger = Logger.getLogger(L06Logger.class.getName());
+ 		logger.setLevel(Level.INFO);
+ 		ConsoleHandler ch = new ConsoleHandler ();
+ 		logger.addHandler(ch);
+ 		SimpleFormatter sFormat = new SimpleFormatter ();
+ 		ch.setFormatter(sFormat);
+ 		logger.log(Level.WARNING, "Тестовое логирование" );
+ 		logger.info("Тестовое логирование" );
+ 	}
+    
+}
