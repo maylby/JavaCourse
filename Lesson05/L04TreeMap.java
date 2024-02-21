@@ -37,12 +37,13 @@ TreeMap
 put(K,V) - добавление
 get(K) - получение
 remove(K) - изменение
-descendingMap() 
-tailMap() 
-headMap() 
-lastEntry() 
-firstEntry()
-descendingKeySet(V)
+descendingMap() - показать в обратном порядке
+descendingKeySet(V) получение только ключей по значению
+tailMap() - показать значения, которые больше, чем ...
+headMap() - значения меньше, чем ...
+lastEntry() - ???
+firstEntry() - ???
+
 
 В основе данной коллекции лежат красно-чёрные деревья.
 Позволяют быстрее искать, но могут возникнуть «заминки» при добавлении.
