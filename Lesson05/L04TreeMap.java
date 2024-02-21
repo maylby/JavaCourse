@@ -29,4 +29,22 @@ public class L04TreeMap {
     }
 }
 
+/*
+TreeMap
 
+Методы, на которые нужно обратить внимание
+
+put(K,V) - добавление
+get(K) - получение
+remove(K) - изменение
+descendingMap() 
+tailMap() 
+headMap() 
+lastEntry() 
+firstEntry()
+descendingKeySet(V)
+
+В основе данной коллекции лежат красно-чёрные деревья.
+Позволяют быстрее искать, но могут возникнуть «заминки» при добавлении.
+
+ */
