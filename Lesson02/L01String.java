@@ -37,47 +37,42 @@ habr (ссылка)
 Простой пример
 Создать строку из 1 млн плюсиков. Как?
 
-
+/*
+00:05:00
+Весь код
  */
 package JavaCourse.Lesson02;
 
 public class L01String {
 
     public static void main(String[] args) {
+
         /*
          * Вариант 1 
          * (стандартный функционал)
          */
-        String str = " "; // (?) "str" не подсвечен
-        for (int i = 0; i < 1_000_000; i++) {
+        var s = System.currentTimeMillis(); 
+        String str = ""; // (?) "str" не подсвечен
+        for (int i = 0; i < 700_000; i++) {
             str += "+";  // время выполнения - 41000 ms (41 секунда)
         } 
-
+        System.out.println(System.currentTimeMillis() - s);
+        
         /*
          * Вариант 2 
          * (функционал "StringBuilder")
-         */
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < 1_000_000; i++) {
-            sb.append("+"); // время выполнения - 9 ms
-        }
-
-        /*
-         * 00:05:00
-         * Весь код
-         * (функционал "StringBuilder")
-         */
-        var s = System.currentTimeMillis();
+         */        
+        var s1 = System.currentTimeMillis();
         //String str = "";
-        StringBuilder sb1 = new StringBuilder();
-        for (int i = 0; i < 1_000_000; i++) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 700_000; i++) {
             //str += "+";
-            sb1.append("+");
+            sb.append("+");
         }
-        System.out.println(System.currentTimeMillis() - s);
-        //System.out.println(str); 
-        //System.out.println(sb);
-    }
+        System.out.println(System.currentTimeMillis() - s1);
+        // System.out.println(str); 
+        // System.out.println(sb);
+    // }
 
 
 
@@ -110,17 +105,18 @@ regionMatches(): сравнивает подстроки в строках
      * (см. ПК: 02_(Л-02)_доп, папка "Lesson_02", файл "Ex001_stringsDemo.java")
      * 
      * Включил код в предыдущий запись
-     * Строку "public static" закрыл за ненадобностью
+     * Строку "public static" и открывающую скобку закрыл за ненадобностью
      */
     // public static void main(String[] args)
-    {
+    // {
         String[] name = { "C", "е", "р", "г", "е", "й" };
         String sk = "СЕРГЕЙ КА.";
         System.out.println(sk.toLowerCase()); // сергей ка.
         System.out.println(String.join("", name)); // Cергей
-        System.out.println(String.join("", "C", "е", "р", "г", "е", "й"));
-        // C,е,р,г,е,й
+        System.out.println(String.join(" ", "C", "е", "р", "г", "е", "й"));
+        // C е р г е й
         System.out.println(String.join(",", "C", "е", "р", "г", "е", "й"));
+        // C,е,р,г,е,й
     }
 }
 
