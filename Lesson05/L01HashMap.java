@@ -63,14 +63,68 @@ Map – это множество коллекций, работающих с д
 по принципу <Ключ / Значение>.
 
 Ключевые особенности:
-● ускоренная обработка данных;
-● порядок добавления не запоминается.
+    ● допускаются только уникальные ключи, 
+      значения могут повторяться;
+    ● помните про null значения*;
+    ● ускоренная обработка данных;
+    ● порядок добавления не запоминается.
+
 В HashMap элементы располагаются как угодно 
 и могут менять свое положение.
 
  */
 package JavaCourse.Lesson05;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class L01HashMap {
-    
+        public static void main(String[] args) {
+        /*
+         * Код их дополнтельных материалов к лекции 5
+         * (файл Ex001_HashMap)
+         */
+        Map<Integer, String> db = new HashMap<>();
+        Map<Integer, String> db1 = new HashMap<Integer, String>(); /* более правильная запись, если
+                                                                    * после знака равенства,
+                                                                    * в скобках "<>" указаны 
+                                                                    * тип ключа <Integer> и
+                                                                    * тип значения <String> */ 
+        db.putIfAbsent(1, "один"); // метод проверка ключа, 
+                                             // если такой кюч есть, то ничего не добавляем
+                                             // позволяет избежать перезаписи данных
+        db.put(2, "два"); // "put" - метод добавления 
+        db.put(null, "!null"); 
+        System.out.println(db); // {null=!null, 1=один, 2=два}
+        System.out.println(db.get(44));
+        //db.remove(null); 
+        System.out.println(db1); // {1=один, 2=два}
+        /*
+         * "containsValue" - метод проверки значения
+         */
+        System.out.println(db.containsValue("один")); // true
+        System.out.println(db.containsValue(1)); // false // значение - всегда строка
+        /*
+         * "containsKey" - метод проверки ключа
+         */
+        System.out.println(db.containsKey("один")); // false // ключ - это всегда число
+        System.out.println(db.containsKey(1)); // true
+        System.out.println(db.keySet()); // получение коллекции всех ключей
+        System.out.println(db.values()); // получение коллекции всех значений
+        System.out.println();
+
+        /*
+         * Код из презентации (стр. 11)
+         * пример работы метода добавления "put"
+         */
+        // Map<Integer, String> db = new HashMap<>(); // дубль строки (см. выше)
+        db.put(1, "один"); System.out.println(db);
+        db.put(2, "два"); System.out.println(db);
+        db.put(3, "три"); System.out.println(db);
+        db.put(31, "три один"); System.out.println(db);
+        db.put(13, "один три"); System.out.println(db);
+        db.put(null, "!null"); System.out.println(db);
+        db.put(null, null); System.out.println(db);
+
+    }   
 }
