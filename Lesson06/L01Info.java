@@ -49,12 +49,12 @@ Set
 
 HashSet
 
-isEmpty() – проверка на пустоту.
-add(V) – добавление элемента в коллекцию.
-remove(V) – удаление элемента из коллекцию.
-contains(V) – проверка на включение элемента в коллекции.
-clear() – удаление всех элементов коллекции.
-size() – возвращает количество элементов коллекции.
+    isEmpty() – проверка на пустоту.
+    add(V) – добавление элемента в коллекцию.
+    remove(V) – удаление элемента из коллекцию.
+    contains(V) – проверка на включение элемента в коллекции.
+    clear() – удаление всех элементов коллекции.
+    size() – возвращает количество элементов коллекции.
 
 
 HashSet (код)
@@ -62,6 +62,7 @@ HashSet (код)
  */
 package JavaCourse.Lesson06;
 
+import java.util.*; // библиотека целиком
 import java.util.HashSet;
 import java.util.Set;
 
@@ -80,7 +81,7 @@ class Ex001_HashSet {
     set.add(1); set.add(12); set.add(123);
     set.add(1234); set.add(1234); // "add" - добавление новых значений
     System.out.println(set.contains(12)); // true ("contains" - проверка наличия)
-    set.add(null); // "null" - пустая ссыка (специфическая константа Java)
+    set.add(null); // "null" - пустая ссыка (специфическая константа Java),
                      // не пременима для некоторых коллекций
     System.out.println(set.size()); // 5 - размер коллекции (size), количество элементов 
     System.out.println(set); // [null, 1, 1234, 123, 12] - содержимое коллекции
@@ -93,7 +94,38 @@ class Ex001_HashSet {
      * форма записи кода стандартная, со скобками
      */
     for (var item : set) System.out.println(item); // null 1 1234 123
-    set.clear();
-    System.out.println(set); // []
+    set.clear(); // "clear" - удаление
+    System.out.println(set); // [] - пустая коллекция
     }
 }  
+
+
+/*
+00:06:40
+
+HashSet как синоним множества
+
+    addAll(Coll) – объединение множеств.
+    retainAll(Coll) – пересечение множеств.
+    removeAll(Coll) – разность множеств.
+
+ */
+
+    /*
+     * Код - Доп.мат. (Part1)
+     * или презентация (стр.11)
+     */
+class Ex002_MathSet {
+    public static void main(String[] args) {
+        var a = new HashSet<>(Arrays.asList(1,2,3,4,5,6,7));
+        var b = new HashSet<>(Arrays.asList(2,3,5,7,11,13,17));
+        var u = new HashSet<Integer>(a); u.addAll(b);
+        var r = new HashSet<Integer>(a); r.retainAll(b);
+        var s = new HashSet<Integer>(a); s.removeAll(b);
+        System.out.println(a); // [1, 2, 3, 4, 5, 6]
+        System.out.println(b); // [17, 2, 3, 5, 7, 11]
+        System.out.println(u); // [1, 17, 2, 3, 4, 5, 6, 11]
+        System.out.println(r); // [2, 3, 5, 7]
+        System.out.println(s); // [1, 4, 6]
+    }
+}
