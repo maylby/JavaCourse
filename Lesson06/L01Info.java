@@ -177,3 +177,42 @@ class Ex003_TreeSet {
         System.out.println(a.subSet(3, 5)); // [3, 4]
     }
 }
+
+
+/*
+00:10:30
+
+LinkedHashSet
+(помнит порядок ввода элементов)
+
+● В основе HashMap.
+● Помнит порядок.
+
+Использовать, когда нужен HashSet с запоминанием порядка элемента.
+
+
+Операции
+
+isEmpty() – проверка на пустоту.
+add(V) – добавление элемента в коллекцию.
+remove(V) – удаление элемента из коллекцию.
+contains(V) – проверка на включение элемента в коллекции.
+clear() – удаление всех элементов коллекции.
+size() – возвращает количество элементов коллекции.
+
+ */
+
+/*
+ * LinkedHashSet - аналог HashSet
+ * отличается тем, что запоминает и хранит порядок
+ */
+class Ex004_LinkedHashSet {
+    public static void main(String[] args) {
+        var a = new LinkedHashSet<>(Arrays.asList(1,7,2,3,6,4,5));
+        var b = new LinkedHashSet<>(Arrays.asList(13,3,17,7,2,11,5));
+        a.add(28);
+        System.out.println(a); // [1, 7, 2, 3, 6, 4, 5, 28]
+        System.out.println(b); // [13, 3, 17, 7, 2, 11, 5]
+    }
+
+}
