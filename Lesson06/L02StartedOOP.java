@@ -135,8 +135,8 @@ class Worker {
         /*
          * форма записи в одну строку
          * нет переменной (result), которой пеередаётся строка "format",
-         * вместо передачи в "return" (возврат) переменной "result",
-         * передаётся непосредственно искомое значение (строка)
+         * вместо передачи переменной "result" функции возврат (return),
+         * передаётся, непосредственно, искомое значение (строка)
          */
         return String.format("id: %d fn: %s ln: %s s: %d", id, firstName, lastName, salary);
     }
@@ -146,6 +146,7 @@ class Worker {
         var t = (Worker) o;
         return id == t.id && firstName == t.firstName;
     }
+    
     @Override
     public int hashCode() {
         return id;
