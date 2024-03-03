@@ -215,10 +215,3 @@ class Ex004_LinkedHashSet {
         System.out.println(b); // [13, 3, 17, 7, 2, 11, 5]
     }
 }
-
-
-/*
-00:17:30
-
-
- */
