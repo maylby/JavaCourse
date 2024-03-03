@@ -64,13 +64,13 @@ P.S.
 
 Примеры:
 
-Автомобиль – Lada 2107 UIN 123123123, S/N 789789789
-Здание – Дом по адресу г.Москва ул. Ленина 21к1
-Ученик – Сергей Камянецкий, 51 МиИ, СмолГУ
-Мобильный телефон – Siemens CX60 IMEI 1234520032022
-Геометрическая фигура – додекаэдр
+Автомобиль – Lada 2107 UIN 123123123, S/N 789789789 (экземпляр класса)
+Здание – Дом по адресу г.Москва ул. Ленина 21к1 (экземпляр класса)
+Ученик – Сергей Камянецкий, 51 МиИ, СмолГУ (экземпляр класса)
+Мобильный телефон – Siemens CX60 IMEI 1234520032022 (экземпляр класса)
+Геометрическая фигура – додекаэдр (не является зкземпляром класса)
 Работник – Смиронова Т.В. 14.02.1994, ID 728, Компания GeekBrains
-Котики – Барсик
+Котики – Барсик (не является зкземпляром класса)
 
 
 00:43:00
@@ -78,6 +78,73 @@ P.S.
  */
 package JavaCourse.Lesson06;
 
+import java.util.*;
+
 public class L02StartedOOP {
     
+}
+
+class Ex001_Program {
+
+    public static void main(String[] args) {
+        // #region
+
+        Worker w1 = new Worker();
+        w1.firstName = "Имя_1";
+        w1.lastName = "Фамилия_1";
+        w1.salary = 100;
+        w1.id = 1000;
+
+        Worker w4 = new Worker();
+        w4.firstName = "Имя_1";
+        w4.lastName = "Фамилия_1";
+        w4.salary = 100;
+        w4.id = 1000;
+
+        Worker w2 = new Worker();
+        w2.firstName = "Имя_2";
+        w2.lastName = "Фамилия_2";
+        w2.salary = 200;
+        w2.id = 2000;
+
+        Worker w3 = new Worker();
+        w3.firstName = "Имя_3";
+        w3.lastName = "Фамилия_3";
+        w3.salary = 300;
+        w3.id = 3000;
+
+        // System.out.println(w1);
+        // System.out.println(w2);
+        // System.out.println(w3);
+        //#endregion
+
+        System.out.println(w1==w4);
+        System.out.println(w1.equals(w4));
+        var workers = new HashSet<Worker>(Arrays.asList(w1, w2, w3));
+        System.out.println(workers.contains(w4));
+        
+    }
+}
+
+
+class Worker {
+    int id;
+    int salary;
+    String firstName;
+    String lastName;
+
+    @Override
+    public String toString() {
+        return String.format("%d %s %s %d", id, firstName, lastName, salary);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        var t = (Worker) o;
+        return id == t.id && firstName == t.firstName;
+    }
+    @Override
+    public int hashCode() {
+        return id;
+    }
 }
