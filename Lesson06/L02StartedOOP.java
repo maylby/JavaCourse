@@ -134,8 +134,9 @@ class Worker {
     public String toString() {
         /*
          * форма записи в одну строку
-         * нет переменной (result), которой пеередаётся строка "format",
-         * вместо передачи переменной "result" функции возврат (return),
+         * нет переменной (result), которой бы
+         * присваивалась строка "format",
+         * вместо переменной (result), функции "return"
          * передаётся, непосредственно, строка "format"
          */
         return String.format("id: %d fn: %s ln: %s s: %d", id, firstName, lastName, salary);
