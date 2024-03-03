@@ -74,7 +74,9 @@ public class L01Info {
  */
 class Ex001_HashSet {
     public static void main(String[] args) {
-    Set<Integer> set = new HashSet<>();
+    Set<Integer> set = new HashSet<>(); // в базовый тип "Set" положен экземпляр "HashSet",
+                                        // "HashSet" имплементирует (реализует) интерфейс "Set"
+                                        // (относится к созданию собственных типов)
     set.add(1); set.add(12); set.add(123);
     set.add(1234); set.add(1234);
     System.out.println(set.contains(12)); // true
