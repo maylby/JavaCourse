@@ -78,12 +78,13 @@ class Ex001_HashSet {
                                         // "HashSet" имплементирует (реализует) интерфейс "Set"
                                         // (относится к созданию собственных типов)
     set.add(1); set.add(12); set.add(123);
-    set.add(1234); set.add(1234);
-    System.out.println(set.contains(12)); // true
-    set.add(null);
-    System.out.println(set.size()); // 5
-    System.out.println(set); // [null, 1, 1234, 123, 12]
-    set.remove(12);
+    set.add(1234); set.add(1234); // "add" - добавление новых значений
+    System.out.println(set.contains(12)); // true ("contains" - проверка наличия)
+    set.add(null); // "null" - пустая ссыка (специфическая константа Java)
+                     // не пременима для некоторых коллекций
+    System.out.println(set.size()); // 5 - размер коллекции (size), количество элементов 
+    System.out.println(set); // [null, 1, 1234, 123, 12] - содержимое коллекции
+    set.remove(12); // "remove" - удаление
     /*
      * "println" в коде из презентации 
      * записан в одну строку с циклом (for), 
