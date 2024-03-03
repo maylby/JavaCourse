@@ -81,11 +81,9 @@ package JavaCourse.Lesson06;
 import java.util.*;
 
 public class L02StartedOOP {
-    
+
 }
-
-class Ex001_Program {
-
+class Program {
     public static void main(String[] args) {
         // #region
 
@@ -114,8 +112,10 @@ class Ex001_Program {
         w3.id = 3000;
 
         // System.out.println(w1);
+        // System.out.println(w1.toString());
         // System.out.println(w2);
         // System.out.println(w3);
+        // System.out.println(w4);
         //#endregion
 
         System.out.println(w1==w4);
@@ -135,7 +135,13 @@ class Worker {
 
     @Override
     public String toString() {
-        return String.format("%d %s %s %d", id, firstName, lastName, salary);
+        /*
+         * форма записи в одну строку
+         * нет переменной (result), которой пеередаётся строка "format",
+         * вместо передачи в "return" (возврат) переменной "result",
+         * передаётся непосредственно искомое значение (строка)
+         */
+        return String.format("id:%d fn:%s ln:%s s:%d", id, firstName, lastName, salary);
     }
 
     @Override
