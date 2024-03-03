@@ -57,7 +57,8 @@ HashSet
     size() – возвращает количество элементов коллекции.
 
 
-HashSet (код)
+HashSet 
+(хранит порядок значений)
 
  */
 package JavaCourse.Lesson06;
@@ -139,3 +140,25 @@ class Ex002_MathSet {
         System.out.println(res);
     }
 }
+
+
+/*
+00:08:00
+
+first() - больше чем
+last() - меньше чем
+headSet(E)
+tailSet(E)
+subSet(E1, E2)
+
+
+00:09:00
+
+TreeSet 
+(сохраняет порядок (?))
+
+● В основе HashMap.
+● Упорядочен по возрастанию.
+● null’ов быть не может.
+
+ */
