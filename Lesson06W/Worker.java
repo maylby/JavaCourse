@@ -1,5 +1,8 @@
 package JavaCourse.Lesson06W;
-
+/*
+ * - класс "Worker" 
+ * (блок обработки данных из блока хранения "Ex001_Program")
+ */
 public class Worker {
     int id;
     int salary;

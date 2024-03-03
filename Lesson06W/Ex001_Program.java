@@ -1,7 +1,12 @@
 package JavaCourse.Lesson06W;
 
 import java.util.*;
-
+/*
+ * Раздельная форма записи кода,
+ * каждый блок в отдельном файле:
+ * - класс "Ex001_Program" (блок данных)
+ * - класс "Worker" (блок обработки)
+ */
 public class Ex001_Program {
 
     public static void main(String[] args) {
@@ -31,9 +36,10 @@ public class Ex001_Program {
         w3.salary = 300;
         w3.id = 3000;
 
-        // System.out.println(w1);
-        // System.out.println(w2);
-        // System.out.println(w3);
+        System.out.println(w1.toString());
+        System.out.println(w2);
+        System.out.println(w3);
+        System.out.println(w3);
         //#endregion
 
         System.out.println(w1==w4);
