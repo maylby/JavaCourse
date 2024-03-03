@@ -67,7 +67,7 @@ import java.util.*; // библиотека целиком
 import java.util.HashSet;
 import java.util.Set;
 
-public class L01Info {
+public class L01SetInfo {
     
 }
 /*
