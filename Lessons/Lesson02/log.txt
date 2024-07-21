@@ -1,4 +1,0 @@
-февр. 18, 2024 10:25:41 PM JavaCourse.Lesson02.L06Logger main
-WARNING: Тестовое логирование 1
-февр. 18, 2024 10:25:41 PM JavaCourse.Lesson02.L06Logger main
-INFO: Тестовое логирование 2
